@@ -1,0 +1,14 @@
+{
+  "background.png": "60ce05dab279f2e62a9ace578398e8e4f24bdc82bec4efaa9f13ccf1555a9a86",
+  "selection_big.png": "b503b504dd7f5fe89141729962aea5fc00e5f62392be379a16b920a338d279c4",
+  "selection_small.png": "8fd15cbb6bca058e5a7635c4862be64809a466067f332ad61b5e11365f375f08",
+  "theme.conf": "cd3b54ce885c1d9ab80c7f8f336beb2238f5b759779d2ee33978c4386b083ef5",
+  "fonts/mono.png": "d3b41a4bbfc493ee0ddb3b4899cd89667a21cb2a70044943ee8d7f6e3170573e",
+  "icons/entry-0.png": "26e0157a5921cf51a97380131c23ed12bff4482f29925974ef1a47afff5f6471",
+  "icons/entry-1.png": "8b59dceeee72ae724085468815a9a28359a82bbf0ba84ee9f4ea00cf76d2fdc9",
+  "icons/func_about.png": "895e3dd37d106ca464c79e8e7a9f443bd1d17eb3a7006c948c358d554ca32ed2",
+  "icons/func_exit.png": "bf817767c11e28edb889bce0c6eff3ac62301062dc4c45c20a1effa6248e6edf",
+  "icons/func_firmware.png": "58358d074eba6e41cc45243a0259118a28d58ab25b415149ba4bc04acd7d69c7",
+  "icons/func_reset.png": "d0bec0f731da53f3296002f786232c3227f810f70b37e77aba219692786f7295",
+  "icons/func_shutdown.png": "1d84bdd27f7a5bb3bd0064d90342c43eeae2c153b76ca0bdb4305faafd63468b"
+}

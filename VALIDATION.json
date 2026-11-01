@@ -1,0 +1,18 @@
+{
+  "release": "1.0.0",
+  "theme": "ICE",
+  "tested_refind": "0.14.2",
+  "vm_resolutions": [
+    "1920x1080",
+    "3840x2160"
+  ],
+  "vm_main_entries": 2,
+  "vm_tools": 5,
+  "keyboard_selection_states_checked_per_resolution": 7,
+  "selection_diff_outside_icon_rectangles": false,
+  "public_source_reproduces_1080p_assets": true,
+  "additional_generator_smoke_check": "English, one entry, optional information, no countdown",
+  "guest_OS_boot_tested": false,
+  "universal_physical_firmware_compatibility_claimed": false,
+  "host_boot_modified": false
+}

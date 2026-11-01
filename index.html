@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICE — Minimal rEFInd boot theme</title>
+<meta name="description" content="A minimal rEFInd theme with native 4K assets, ice-blue icon selection, screenshots and a configurable layout generator.">
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;color:#dae4eb;background:#020508}
+*{box-sizing:border-box}body{margin:0}main{max-width:1500px;margin:auto;padding:36px 24px}
+header{display:flex;justify-content:space-between;gap:30px;align-items:start}h1{font-size:32px;font-weight:500;letter-spacing:.16em;margin:0}p{line-height:1.6;color:#9eb0be;max-width:850px}a{color:#b4e8f8;text-underline-offset:4px}
+nav,.settings{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}button,select{font:inherit;color:#9eb0be;border:1px solid #26323d;background:transparent;border-radius:6px;padding:9px 14px;cursor:pointer}button[aria-pressed=true]{color:#b4e8f8;border-color:#b4e8f8;background:#0b171e}button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid #b4e8f8;outline-offset:4px}
+figure{margin:0;overflow:auto;border:1px solid #17222a;border-radius:8px}img{display:block;width:100%;height:auto}figure.native img{width:auto;max-width:none}figcaption{margin-top:14px;color:#8999a8;font-size:14px;line-height:1.6}.note{border-top:1px solid #17222a;padding-top:18px;font-size:14px}
+@media(max-width:640px){header{display:block}main{padding:24px 14px}nav{gap:6px}button{padding:8px}}
+</style>
+<main><header><div><h1>ICE</h1><p>Un tema minimalista para rEFInd. Negro, azul hielo y selección que ilumina el propio icono.</p></div><p><a href="https://github.com/PapiGECode/refind-ice/blob/main/README.md">Instalación</a> · <a href="https://github.com/PapiGECode/refind-ice/blob/main/README.en.md">English guide</a></p></header>
+<p><a href="https://github.com/PapiGECode/refind-ice/releases/download/v1.0.0/refind-ice-v1.0.0.zip">Descargar ICE v1.0.0</a> · <a href="https://github.com/PapiGECode/refind-ice">Código en GitHub</a></p>
+<div class="settings"><label>Resolución <select id="resolution"><option value="4k">4K · 3840 × 2160</option><option value="1080p">Full HD · 1920 × 1080</option></select></label><button id="zoom" aria-pressed="false">Ver a tamaño real</button></div>
+<nav aria-label="Seleccionar una captura del menú"></nav>
+<figure><img width="3840" height="2160" alt="" src="4k/vm-0.png"></figure><figcaption aria-live="polite"></figcaption>
+<p>Usa ← → para cambiar de selección, ↓ para ir a herramientas y ↑ para volver a los sistemas. Los botones solo muestran capturas: no ejecutan ninguna acción.</p>
+<p class="note">Capturas reales de rEFInd 0.14.2 en una máquina virtual. La vista previa no demuestra compatibilidad con el firmware de otro equipo. Las entradas Windows/Linux son ejemplos: cada persona debe configurar sus cargadores. No se incluyen sistemas operativos ni herramientas de recuperación.</p>
+</main><script>
+const names=['Windows','Linux','Información','Reiniciar','Apagar','Salir','BIOS'];let current=0;
+const nav=document.querySelector('nav'),img=document.querySelector('img'),resolution=document.querySelector('#resolution');
+names.forEach((name,i)=>{const b=document.createElement('button');b.textContent=name;b.onclick=()=>show(i);nav.append(b)});
+function show(i){current=i;img.src=resolution.value+'/vm-'+i+'.png';img.alt='ICE — '+names[i]+' seleccionado';document.querySelector('figcaption').textContent=names[i]+' · Captura real en '+(resolution.value==='4k'?'3840 × 2160':'1920 × 1080');[...nav.children].forEach((b,n)=>b.setAttribute('aria-pressed',String(n===i)));img.width=resolution.value==='4k'?3840:1920;img.height=resolution.value==='4k'?2160:1080}
+resolution.onchange=()=>show(current);
+document.addEventListener('keydown',e=>{if(e.target.tagName==='SELECT')return;let i=current;if(e.key==='ArrowRight')i=(current+1)%names.length;else if(e.key==='ArrowLeft')i=(current+names.length-1)%names.length;else if(e.key==='ArrowDown')i=2;else if(e.key==='ArrowUp')i=0;else return;e.preventDefault();show(i)});
+document.querySelector('#zoom').onclick=e=>{const enabled=document.querySelector('figure').classList.toggle('native');e.currentTarget.setAttribute('aria-pressed',String(enabled));e.currentTarget.textContent=enabled?'Encajar en pantalla':'Ver a tamaño real'};show(0);
+</script></html>

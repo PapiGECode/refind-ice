@@ -1,0 +1,20 @@
+# EXAMPLE ONLY: verify every loader and volume before using.
+# Icons/loaders: absolute EFI paths. Theme paths: rEFInd-relative.
+scanfor manual
+showtools about,reboot,shutdown,exit,firmware
+use_nvram false
+use_graphics_for windows
+default_selection "Windows"
+include themes/ice/theme.conf
+
+menuentry "Windows" {
+    icon /EFI/refind/themes/ice/icons/entry-0.png
+    loader /EFI/Microsoft/Boot/bootmgfw.efi
+    ostype Windows
+}
+
+menuentry "Linux" {
+    icon /EFI/refind/themes/ice/icons/entry-1.png
+    loader /EFI/REPLACE_WITH_YOUR_LINUX_LOADER.efi
+    ostype Linux
+}

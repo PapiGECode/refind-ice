@@ -1,0 +1,43 @@
+{
+  "brand": "ICE",
+  "timeout": 8,
+  "entries": [
+    {
+      "title": "Windows",
+      "subtitle": "Sistema principal",
+      "glyph": "windows",
+      "loader": "/EFI/Microsoft/Boot/bootmgfw.efi",
+      "ostype": "Windows"
+    },
+    {
+      "title": "Linux",
+      "subtitle": "Segundo entorno",
+      "glyph": "terminal",
+      "loader": "/EFI/REPLACE_WITH_YOUR_LINUX_LOADER.efi",
+      "ostype": "Linux"
+    }
+  ],
+  "tools": [
+    "about",
+    "reboot",
+    "shutdown",
+    "exit",
+    "firmware"
+  ],
+  "info": [],
+  "labels": {
+    "home": "INICIO",
+    "choose": "Elige tu entorno",
+    "info": "E Q U I P O",
+    "about": "Información",
+    "reboot": "Reiniciar",
+    "shutdown": "Apagar",
+    "exit": "Salir",
+    "firmware": "BIOS",
+    "mok_tool": "Claves",
+    "keys": "←  →   Seleccionar       INTRO   Confirmar       ↓   Herramientas",
+    "wait": "Selecciona un entorno para continuar.",
+    "countdown": "{name} se inicia tras {seconds} segundos si no pulsas ninguna tecla."
+  },
+  "refind_dir": "/EFI/refind"
+}
